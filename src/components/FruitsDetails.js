@@ -22,11 +22,15 @@ const FruistDetails = () => {
             data => {setFruitData(data)
                     setLoaded(true)}
         )
-    })
+    }, [fruit_id])
 
     if (isLoaded){
         return (
             <div className="FruitsDetails">
+                <button onClick={() => {
+                    document.querySelector("#Pop").style.display = "none";
+                    setLoaded(false)}
+                }>&#10006;</button>
                 <img src={require("../images/" + fruit_data.image)} alt=""/>
                 <p style={{color: fruit_data.color}}><span>Nom</span> : {fruit_data.name}</p>
                 <p><span>Saison</span> : {fruit_data.season}</p>
@@ -36,7 +40,19 @@ const FruistDetails = () => {
             </div>
         );
     }else{
-        return ('')
+        return (
+            <div className="FruitsDetails">
+                <button onClick={() => {
+                    document.querySelector("#Pop").style.display = "none";
+                    setLoaded(false)}
+                }>&#10006;</button>
+                <p><span>Nom</span> : </p>
+                <p><span>Saison</span> : </p>
+                <p><span>Prix</span> : </p>
+                <p><span>Stock</span> : </p>
+    
+            </div>
+        );
     }
     
 

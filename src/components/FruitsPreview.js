@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
-import { Outlet, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 
 const FruitsPreview = ({fruit}) => {
 
+
     return (
-        <li className="FruitsPreview" style={{boxShadow: "0px 10px 0px "+ fruit.color}}>
-            <Link to={"fruits/"+fruit.id}>
-                {fruit.name}
+        <li className="FruitsPreview">
+            <Link to={"fruits/"+fruit.id} style={{boxShadow: "0px 10px 0px "+ fruit.color}} onClick={() => document.querySelector("#Pop").style.display = "block"}>
                 <img src={require("../images/" + fruit.image)} alt="" className="fruit-image"/>
+                {fruit.name}
             </Link>
         </li>
     );

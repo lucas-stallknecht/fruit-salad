@@ -1,106 +1,128 @@
-
-body{
-  box-sizing: border-box;
-}
-
-.FruitsMaster{
-  min-height: 100vh;
-}
-
 nav{
+  margin-block: 2rem;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 4rem;
-
-  padding: 2rem;
-
-  border-bottom: 2px solid black;
+  gap: 1rem;
 }
 
 nav > img{
-  height: 100px;
-}
-
-nav > h1{
-  font-size: 18pt;
-}
-
-nav > button{
-  padding: 1rem;
-
-  color: white;
-  background: rgb(24, 24, 24);
-  box-shadow: 0px 0px 0px transparent;
-  border: 0px solid transparent;
-  border-radius: 10px;
-  text-shadow: 0px 0px 0px transparent;
-  cursor: grab;
-}
-
-
-main{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.FruitsList{
-  padding: 1rem;
-  margin: 0;
-  min-width: 300px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 1rem;
-
-  background-color: black;
-  list-style: none;
-}
-
-
-.FruitsPreview > a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem;
-
-  color: black;
-  background-color: white;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  text-decoration: none;
-
-}
-
-
-.fruit-image{
   height: 50px;
 }
 
-#Detail {
-  padding: 5rem;
+nav > a{
+  font-size: 32pt;
+  text-decoration: none;
+  color: black;
+  font-family: 'Delicious Handrawn', cursive;
+}
+
+main{
+  padding: 3rem 2rem 10rem 2rem;
+  background-color: rgb(241, 241, 241);
+}
+
+.FruitsList{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+
+  list-style: none;
+}
+
+.FruitsList a{
+  padding: 2.5rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14pt;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+.FruitsList img{
+  margin-bottom: 1.5rem;
+  width: 130px
+}
+
+
+
+#Pop{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: hsla(0, 0%, 19%, 0.951);
+
+  display: none;
 }
 
 .FruitsDetails{
+  width: fit-content;
+  padding: 5rem;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 0.5rem;
+
+  background-color: white;
+}
+
+.FruitsDetails > button{
+  position: absolute;
+  right: 20pt;
+  top: 20pt;
+  width: fit-content;
+
+  background-color: transparent;
+  border: 0px solid transparent;
+  cursor: grab;
+  font-size: 20pt;
 }
 
 .FruitsDetails > img{
-  height: 200px;
-  width: 200px;
-  margin-bottom: 2rem;
+  height: 20vw;
+  aspect-ratio: 1;
+  margin-bottom: 1rem;
 }
 
 .FruitsDetails > p{
   margin: 0;
-  font-size: large;
+  font-size: 14pt;
 }
 
 .FruitsDetails span{
   font-weight: bold;
 }
+
+
+.Filter{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.Filter > select{
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  font-size: large;
+  border: 0px;
+}
+

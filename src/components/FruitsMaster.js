@@ -8,8 +8,9 @@ import { Outlet } from "react-router";
 
 export default function FruitsMaster(){
 
-    const [displayFruits, setDisplayFruits] = useState(false);
-    const [fruit_content, setFruitContent] = useState();
+    const [isLoaded, setFruitLoaded] = useState(false);
+    const [fruit_list_data, setFruitList] = useState([]);
+    const [selectedFilter, setFilter] = useState("")
 
     useEffect(() => {
         axios({
@@ -21,28 +22,43 @@ export default function FruitsMaster(){
         )
         .then(
             data => {
-                displayFruits ? 
-                setFruitContent((<ul className="FruitsList">{data.map(fruit => <FruitsPreview fruit={fruit}/>)}</ul>)) 
-                : setFruitContent()
+                setFruitList(data)
+                setFruitLoaded(true)
             }
         )
 
-    }, [displayFruits]);
+    }, []);
 
+    if (isLoaded){
+        return (
+            <div className="FruitsMaster">
+                <div className="Popout"></div>
+                <nav>   
+                    <img src={fs}/>
+                    <a href="#">Fruit-salad</a>
+                </nav>
+                <main>
+                    <div className="Filter">
+                        <select onChange={e => setFilter(e.target.value)}>
+                            <option value="">Tous</option>
+                            <option value="Printemps">Printemps</option>
+                            <option value="Eté">Eté</option>
+                            <option value="Automne">Automne</option>
+                            <option value="Hiver">Hiver</option>
+                        </select>
+                    </div>
+                    <ul className="FruitsList">
+                            {fruit_list_data.filter(fruit => fruit.season.includes(selectedFilter)).map(fruit => <FruitsPreview fruit={fruit}/>)}
 
-    return (
-        <div className="FruitsMaster">
-            <nav>   
-                <img src={fs}/>
-                <h1>Fruit-Salad</h1>
-                <button onClick={() => setDisplayFruits(!displayFruits)}>Afficher les fruits</button>
-            </nav>
-            <main>
-                {fruit_content}
-                <div id="Detail">
+                    </ul>
+                </main>
+                <div id="Pop">
                     <Outlet/>
                 </div>
-            </main>
-        </div>
-    );
+            </div>
+        );
+    }
+    else{
+        return ("");
+    }
 }
