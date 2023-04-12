@@ -1,5 +1,7 @@
 # Fruit-salad
 
+Lucas Stallknecht - M1 Sciences Cognitives.
+
 ## Master : 
 ![image](https://user-images.githubusercontent.com/124690694/231418855-ff698872-af84-4a31-99d2-0ec77725f3fb.png)
 
