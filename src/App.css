@@ -18,10 +18,32 @@ nav > a{
   font-family: 'Delicious Handrawn', cursive;
 }
 
+
+
 main{
   padding: 3rem 2rem 10rem 2rem;
   background-color: rgb(241, 241, 241);
 }
+
+.Filter{
+  margin-bottom: 3rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.Filter > select, form *{
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  font-size: large;
+  border: 0px;
+}
+
+.Filter form input[type=text]{
+  margin-right: 3px;
+}
+
 
 .FruitsList{
   margin: 0;
@@ -112,21 +134,18 @@ main{
   font-weight: bold;
 }
 
+@media (max-width: 768px){
+  .Filter{
+    flex-direction: column;
+  }
 
-.Filter{
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
+  .Filter > form{
+    display: flex;
+    flex-direction: column;
+  }
 
-.Filter > select, form *{
-  padding: 0.5rem 1.5rem;
-  background-color: white;
-  font-size: large;
-  border: 0px;
-}
+  .Filter form input[type=text]{
+    margin: 0 0 3px 0;
+  }
 
-.Filter form input[type=text]{
-  border-right: 3px solid rgb(241, 241, 241);
 }

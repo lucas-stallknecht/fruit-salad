@@ -5,7 +5,6 @@ const Search = ({onSubmit}) => {
 
     const {register , handleSubmit } = useForm();
 
-
     return (
         <form onSubmit={handleSubmit(data => onSubmit(data))}>
 
@@ -14,7 +13,6 @@ const Search = ({onSubmit}) => {
 
         </form>
     );
-
 }
 
 export default Search;

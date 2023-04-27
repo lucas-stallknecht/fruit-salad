@@ -10,7 +10,9 @@ import Search from "./Search";
 
 
 
+
 export default function FruitsMaster(){
+
 
     const [keyword, setKeyword] = useState("")
     const [isLoaded, setFruitLoaded] = useState(false);
@@ -58,8 +60,7 @@ export default function FruitsMaster(){
                         </select>
                     </div>
                     <ul className="FruitsList">
-                            {fruit_list_data.filter(fruit => fruit.season.includes(selectedFilter)).map(fruit => <FruitsPreview fruit={fruit}/>)}
-
+                            {fruit_list_data.filter(fruit => fruit.season.includes(selectedFilter)).map(fruit => <FruitsPreview fruit={fruit} key={fruit.id}/>)}
                     </ul>
                 </main>
                 <div id="Pop">
