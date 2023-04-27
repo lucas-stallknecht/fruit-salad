@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 
 const FruitsPreview = ({fruit}) => {
-
 
     return (
         <li className="FruitsPreview">

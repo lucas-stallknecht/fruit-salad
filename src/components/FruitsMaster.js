@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import fs from "../images/fruit-salad.png";
-import FruitsPreview from "./FruitsPreview";
-import axios from "axios";
 import { Outlet } from "react-router";
+import axios from "axios";
+
+import FruitsPreview from "./FruitsPreview";
+
+import fs from "../images/fruit-salad.png";
+import Search from "./Search";
+
 
 
 
 export default function FruitsMaster(){
 
+    const [keyword, setKeyword] = useState("")
     const [isLoaded, setFruitLoaded] = useState(false);
     const [fruit_list_data, setFruitList] = useState([]);
     const [selectedFilter, setFilter] = useState("")
@@ -15,7 +20,7 @@ export default function FruitsMaster(){
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://fruits.shrp.dev/items/fruits',
+            url: `https://fruits.shrp.dev/items/fruits?search=${keyword}`,
         })
         .then(
             response => response.data.data
@@ -27,18 +32,23 @@ export default function FruitsMaster(){
             }
         )
 
-    }, []);
+    }, [keyword]);
+
+    const submitKeyword = (data) => {
+        setKeyword(data.fruitName)
+    }
 
     if (isLoaded){
         return (
             <div className="FruitsMaster">
                 <div className="Popout"></div>
                 <nav>   
-                    <img src={fs}/>
-                    <a href="#">Fruit-salad</a>
+                    <img src={fs} alt="fruit salad logo"/>
+                    <a href="/">Fruit-salad</a>
                 </nav>
                 <main>
                     <div className="Filter">
+                        <Search onSubmit={submitKeyword}/>
                         <select onChange={e => setFilter(e.target.value)}>
                             <option value="">Tous</option>
                             <option value="Printemps">Printemps</option>

@@ -116,13 +116,17 @@ main{
 .Filter{
   display: flex;
   justify-content: center;
+  gap: 3rem;
   margin-bottom: 3rem;
 }
 
-.Filter > select{
+.Filter > select, form *{
   padding: 0.5rem 1.5rem;
   background-color: white;
   font-size: large;
   border: 0px;
 }
 
+.Filter form input[type=text]{
+  border-right: 3px solid rgb(241, 241, 241);
+}
