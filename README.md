@@ -7,3 +7,7 @@ Lucas Stallknecht - M1 Sciences Cognitives.
 
 ## Details : 
 ![image](https://user-images.githubusercontent.com/124690694/231419054-48218d22-2ad3-4630-938e-62099b0b16a5.png)
+
+## FYI : 
+- Responsive is available until 400px of width. 
+- Data models have been deleted since the API provide all informations.
