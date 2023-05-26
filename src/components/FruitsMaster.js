@@ -13,11 +13,10 @@ import Search from "./Search";
 
 export default function FruitsMaster(){
 
-
     const [keyword, setKeyword] = useState("")
     const [isLoaded, setFruitLoaded] = useState(false);
     const [fruit_list_data, setFruitList] = useState([]);
-    const [selectedFilter, setFilter] = useState("")
+    const [selectedFilter, setFilter] = useState("");
 
     useEffect(() => {
         axios({
