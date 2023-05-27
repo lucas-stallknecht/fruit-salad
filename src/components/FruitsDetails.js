@@ -26,7 +26,7 @@ const FruistDetails = () => {
 
     if (isLoaded){
         return (
-            <div className="FruitsDetails">
+            <div className="FruitsDetails PopWindow">
                 <button onClick={() => {
                     document.querySelector("#Pop").style.display = "none";
                     setLoaded(false)}
