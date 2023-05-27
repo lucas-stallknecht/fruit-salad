@@ -1,13 +1,17 @@
 # Fruit-salad
 
 Lucas Stallknecht - M1 Sciences Cognitives.
-TP1 - TP9
+(TP1 - TP10) + TP13
 
 ## Master : 
-![image](https://github.com/lucas-stallknecht/fruit-salad/assets/124690694/3c197fbe-f738-4aa9-9830-aaae0138d9b0)
+![image](https://github.com/lucas-stallknecht/fruit-salad/assets/124690694/9bf8becc-34ad-46cd-8500-769ddacff22f)
 
 ## Details : 
-![image](https://user-images.githubusercontent.com/124690694/231419054-48218d22-2ad3-4630-938e-62099b0b16a5.png)
+![image](https://github.com/lucas-stallknecht/fruit-salad/assets/124690694/b69c4f4b-638e-4ba2-b801-261445a16a88)
+
+## Cart :
+![image](https://github.com/lucas-stallknecht/fruit-salad/assets/124690694/895607fb-7e5b-4e72-8351-23493790c66e)
+
 
 ## FYI : 
 - Responsive is available even though it might not be the cleanest. 
