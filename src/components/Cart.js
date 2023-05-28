@@ -30,7 +30,7 @@ const Cart = () => {
                     {Object.keys(counts).map(fruit_id => <li key={fruit_id}>
                         {counts[fruit_id]}x :
                         <img src={require("../images/" + fruit_list_data.find(obj => obj.id == fruit_id).image)} alt="" className="fruit-image"/>
-                        ({fruit_list_data.find(obj => obj.id == fruit_id).price * counts[fruit_id]}€)
+                        ({Math.round(fruit_list_data.find(obj => obj.id == fruit_id).price * counts[fruit_id])}€)
                     </li>)}
                 </ul>
                 <div className="cart-bottom">Prix total : <b>{calculateAmount()}€</b></div>
